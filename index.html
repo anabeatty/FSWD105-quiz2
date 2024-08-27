@@ -34,7 +34,8 @@ Instructor: Washington Valencia
 	<link rel="shortcut icon" type="image/x-icon"
 		href="https://canvascctb.s3.ca-central-1.amazonaws.com/account_1/attachments/95/CCTB_favicon.ico" />
 
-
+	<!-- Quiz 2 script-->
+	<script src="assets/js/index.js"></script>
 </head>
 
 <body class="header-scroll-reveal">
@@ -149,7 +150,7 @@ Instructor: Washington Valencia
 
 									<a class="nav-link" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
 										aria-expanded="false" id="mainNavHosting">
-										<h3>Quiz #2 - IST 107 - <span class="text-danger">{{Replace with your Full
+										<h3 id="idUserName">Quiz #2 - IST 107 - <span class="text-danger">{{Replace with your Full
 												Name}}</span>
 										</h3>
 									</a>
@@ -177,7 +178,12 @@ Instructor: Washington Valencia
 									<i class="fi fi-users m-0-xs"></i>
 
 									<!-- hide text on mobile, keep the icon (space issue reason) -->
-									<span class="d-none d-lg-inline-block">Change my name</span>
+									 
+									<button id="idChangeMyName" onclick="functionChangeMyName();functionReplaceEmail();functionReplaceDate();replaceProtocols()">
+										<span class="d-none d-lg-inline-block">
+											Change my name
+										</span>
+									</button>
 								</a>
 							</li>
 
@@ -221,8 +227,8 @@ Instructor: Washington Valencia
 							</p><br><br>
 
 							<div class="mt-15 text-muted">
-								<h2>{{Replace with current date}} </h2>
-								<h2>{{Replace with your email}} </h2>
+								<h2 id="idReplaceDate">{{Replace with current date}} </h2>
+								<h2 id="idEmail" >{{Replace with your email}} </h2>
 							</div>
 
 						</div>
@@ -259,7 +265,7 @@ Instructor: Washington Valencia
 					<h2 class="h5 mb-1">
 						<span class="text-primary fw-bold">HTTP</span> <span class="fw-light">protocol</span>
 					</h2>
-					<p class="m-0">xx port / Layer 7</p>
+					<p class="m-0"><span id="idHTTP">xx</span>port / Layer 7</p>
 
 				</div>
 
@@ -269,7 +275,7 @@ Instructor: Washington Valencia
 					<h2 class="h5 mb-1">
 						<span class="text-danger fw-bold">HTTPS</span> <span class="fw-light">protocol</span>
 					</h2>
-					<p class="m-0">xx port / Layer 7</p>
+					<p class="m-0"><span id="idHTTPS">xx</span></span> port / Layer 7</p>
 
 				</div>
 
@@ -279,7 +285,7 @@ Instructor: Washington Valencia
 					<h2 class="h5 mb-1">
 						<span class="text-warning fw-bold">SSH</span> <span class="fw-light">protocol</span>
 					</h2>
-					<p class="m-0">xx port / layer 7</p>
+					<p class="m-0"><span id="idSSH">xx</span>port / layer 7</p>
 
 				</div>
 
@@ -289,7 +295,7 @@ Instructor: Washington Valencia
 					<h2 class="h5 mb-1">
 						<span class="text-success fw-bold">DNS</span> <span class="fw-light">protocol</span>
 					</h2>
-					<p class="m-0">xx port / layer 7</p>
+					<p class="m-0"><span id="idDNS">xx</span>port / layer 7</p>
 
 				</div>
 
@@ -508,7 +514,7 @@ Instructor: Washington Valencia
 						</div>
 
 						<div class="text-align-end">
-							<a href="#" class="btn btn-primary btn-soft">How many items would you like in
+							<a href="#" class="btn btn-primary btn-soft" onclick="functionHowManyItems()">How many items would you like in
 								the list?</a>
 						</div>
 
